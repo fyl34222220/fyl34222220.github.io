@@ -6,8 +6,8 @@ email: 3535977585@qq.com
 url: "https://fyl34222220.github.io"
 baseurl: ""
 
-# GitHub Pages 主题（远程主题，无需本地安装）
-remote_theme: jekyll-theme-hacker
+# GitHub Pages 主题
+theme: jekyll-theme-hacker
 
 # Markdown 配置
 markdown: kramdown
