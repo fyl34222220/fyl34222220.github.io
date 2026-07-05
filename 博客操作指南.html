@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>我的博客操作指南</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+    background: #0d1117;
+    color: #c9d1d9;
+    line-height: 1.8;
+    padding: 40px 20px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 40px;
+  }
+  h1 {
+    font-size: 28px;
+    color: #58a6ff;
+    border-bottom: 2px solid #30363d;
+    padding-bottom: 16px;
+    margin-bottom: 24px;
+  }
+  h2 {
+    font-size: 20px;
+    color: #f0883e;
+    margin-top: 32px;
+    margin-bottom: 12px;
+  }
+  h3 {
+    font-size: 16px;
+    color: #d2a8ff;
+    margin-top: 20px;
+    margin-bottom: 8px;
+  }
+  p, li { margin-bottom: 8px; }
+  ul, ol { padding-left: 24px; }
+  b { color: #ffa657; }
+  a { color: #58a6ff; }
+  code {
+    background: #1c2128;
+    color: #ffa657;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: "Cascadia Code", "Fira Code", Consolas, monospace;
+    font-size: 14px;
+  }
+  pre {
+    background: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 16px 20px;
+    overflow-x: auto;
+    margin: 12px 0;
+    font-family: "Cascadia Code", "Fira Code", Consolas, monospace;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  pre code {
+    background: none;
+    padding: 0;
+    color: #c9d1d9;
+  }
+  .tip {
+    background: #1a2332;
+    border-left: 4px solid #58a6ff;
+    padding: 12px 16px;
+    border-radius: 0 8px 8px 0;
+    margin: 16px 0;
+  }
+  .warn {
+    background: #2b1d1a;
+    border-left: 4px solid #f0883e;
+    padding: 12px 16px;
+    border-radius: 0 8px 8px 0;
+    margin: 16px 0;
+  }
+  .cmd { color: #7ee787; }
+  .cmt { color: #8b949e; }
+  .info-box {
+    background: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 16px 0;
+  }
+  .info-box table { width: 100%; border-collapse: collapse; }
+  .info-box td { padding: 8px 12px; border-bottom: 1px solid #21262d; }
+  .info-box td:first-child { color: #8b949e; width: 140px; }
+  .info-box td:last-child { color: #7ee787; font-family: monospace; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>📝 我的博客操作指南</h1>
+
+<div class="info-box">
+  <table>
+    <tr><td>🌐 博客地址</td><td><a href="https://fyl34222220.github.io">https://fyl34222220.github.io</a></td></tr>
+    <tr><td>📂 本地目录</td><td>C:\Users\35359\my-blog</td></tr>
+    <tr><td>📬 文章目录</td><td>C:\Users\35359\my-blog\_posts\</td></tr>
+    <tr><td>🎨 主题</td><td>jekyll-theme-hacker</td></tr>
+    <tr><td>💰 费用</td><td>完全免费</td></tr>
+    <tr><td>📅 更新日期</td><td>2026-07-05</td></tr>
+  </table>
+</div>
+
+<h2>📖 如何写一篇新文章</h2>
+
+<h3>第 1 步：创建文章文件</h3>
+<p>在 <code>C:\Users\35359\my-blog\_posts\</code> 目录下新建文件，<b>文件名必须严格按这个格式</b>：</p>
+<pre><code><span class="cmt">格式：</span>YYYY-MM-DD-文章标题.md
+<span class="cmt">示例：</span>2026-07-06-今天学了啥.md</code></pre>
+
+<h3>第 2 步：写文章内容</h3>
+<p>文件开头必须包含下面这段 <b>Front Matter</b>（分隔线不能省）：</p>
+<pre><code>---
+layout: post
+title: <span class="cmd">"你的文章标题"</span>
+date: <span class="cmd">2026-07-06 10:00:00 +0800</span>
+tags: <span class="cmd">[标签1, 标签2]</span>
+---
+
+正文从这里开始，支持 Markdown 语法。
+
+## 二级标题
+
+可以放 <b>**加粗**</b>、<i>*斜体*</i>、`代码`、[链接](网址)
+
+- 列表项 1
+- 列表项 2
+
+> 引用一段话
+
+也可以插入图片：![描述](图片链接)</code></pre>
+
+<div class="tip">
+  💡 <b>小技巧</b>：文件开头那段 --- 之间的内容叫 Front Matter，告诉 Jekyll 这篇文章的标题、日期和标签。下面是正文，随便写。
+</div>
+
+<h3>第 3 步：推送到 GitHub</h3>
+<p>打开 <b>PowerShell</b>，粘贴以下命令：</p>
+<pre><code>cd C:\Users\35359\my-blog
+git add _posts/你的文件名.md
+git commit -m <span class="cmd">"发布：文章标题"</span>
+git push</code></pre>
+
+<div class="warn">
+  ⚠️ <b>注意</b>：推送前确保梯子开着！git 已经配置了走 127.0.0.1:7890 代理。
+</div>
+
+<h3>第 4 步：查看结果</h3>
+<p>推送后等 <b>1-2 分钟</b>，打开 <a href="https://fyl34222220.github.io">https://fyl34222220.github.io</a> 刷新即可看到新文章。</p>
+
+<h2>🏷️ 标签 & 分类</h2>
+<p>在文章的 Front Matter 里可以添加标签：</p>
+<pre><code>tags: <span class="cmd">[编程, Python, 教程]</span>
+categories: <span class="cmd">技术</span></code></pre>
+
+<h2>🗑️ 删除文章</h2>
+<p>删除本地 <code>_posts</code> 下对应的文件，然后推送：</p>
+<pre><code>cd C:\Users\35359\my-blog
+git rm _posts/要删的文章.md
+git commit -m <span class="cmd">"删除文章"</span>
+git push</code></pre>
+
+<h2>⚡ 常用命令速查</h2>
+<pre><code><span class="cmt"># 进入博客目录</span>
+cd C:\Users\35359\my-blog
+
+<span class="cmt"># 查看有哪些文件改了</span>
+git status
+
+<span class="cmt"># 添加所有改动</span>
+git add -A
+
+<span class="cmt"># 提交</span>
+git commit -m <span class="cmd">"描述你做了什么"</span>
+
+<span class="cmt"># 推送</span>
+git push
+
+<span class="cmt"># 一次搞定（改完所有文章后）</span>
+git add -A &amp;&amp; git commit -m <span class="cmd">"更新"</span> &amp;&amp; git push</code></pre>
+
+<h2>📋 完整模板（复制即用）</h2>
+<pre><code>---
+layout: post
+title: "文章标题"
+date: 2026-07-06 10:00:00 +0800
+tags: [标签]
+---
+
+## 开头
+
+正文写这里。
+
+## 中间
+
+继续写。
+
+## 结尾
+
+写完了。
+</code></pre>
+
+<p style="text-align:center; margin-top:40px; color:#484f58;">
+  Powered by Jekyll · Hosted on GitHub Pages · 完全免费 ✨
+</p>
+
+</div>
+</body>
+</html>
