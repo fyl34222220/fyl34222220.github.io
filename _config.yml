@@ -1,0 +1,33 @@
+# 站点配置
+title: fyl34222220 的博客
+description: 欢迎来到我的个人博客
+author: fyl34222220
+email: 3535977585@qq.com
+url: "https://fyl34222220.github.io"
+baseurl: ""
+
+# GitHub Pages 主题（远程主题，无需本地安装）
+remote_theme: jekyll-theme-hacker
+
+# Markdown 配置
+markdown: kramdown
+
+# 插件（GitHub Pages 支持的）
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# 排除文件
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+
+# 分页
+paginate: 5
+paginate_path: "/page:num/"
+
+# 语言/时区
+lang: zh-CN
+timezone: Asia/Shanghai
